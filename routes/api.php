@@ -17,7 +17,9 @@ Route::get('/tes-api', function () {
     return response()->json(['message' => 'API Sistem B2B Fashion Berjalan Baik']);
 });
 
-// Modul Produk (Rine)
+// ==========================================
+// 1. Modul Produk (Risne) - FULL CRUD API
+// ==========================================
 Route::get('/products/view', [ProductController::class, 'index']);
 Route::get('/products', [ProductController::class, 'apiIndex']);
 Route::post('/products', [ProductController::class, 'apiStore']);
@@ -25,15 +27,28 @@ Route::get('/products/{id}', [ProductController::class, 'apiShow']);
 Route::put('/products/{id}', [ProductController::class, 'apiUpdate']);
 Route::delete('/products/{id}', [ProductController::class, 'apiDestroy']);
 
-// Modul Pembayaran (Miche)
+// ==========================================
+// 2. Modul Pelanggan (Awin / Kapten) - FULL CRUD API
+// ==========================================
+// Rute untuk nampilin halaman HTML-nya:
+Route::get('/pelanggan/view', [PelangganController::class, 'index']); 
+// Rute untuk proses tarik, tambah, edit, dan hapus data (Fetch JSON):
+Route::get('/pelanggan', [PelangganController::class, 'apiIndex']);
+Route::post('/pelanggan', [PelangganController::class, 'apiStore']);
+Route::put('/pelanggan/{id}', [PelangganController::class, 'apiUpdate']);
+Route::delete('/pelanggan/{id}', [PelangganController::class, 'apiDestroy']);
+
+// ==========================================
+// 3. Modul Pembayaran (Miche)
+// ==========================================
 Route::get('/pembayaran', [PembayaranController::class, 'index']);
 
-// Modul Pengiriman (Hedy)
+// ==========================================
+// 4. Modul Pengiriman (Hedy)
+// ==========================================
 Route::get('/pengiriman', [PengirimanController::class, 'index']);
 
-// Modul Pelanggan (Win)
-Route::get('/pelanggan', [PelangganController::class, 'index']);
-
-// Modul Pemesanan / Orders
+// ==========================================
+// 5. Modul Pemesanan (Risti)
+// ==========================================
 Route::apiResource('orders', PesananController::class);
-
