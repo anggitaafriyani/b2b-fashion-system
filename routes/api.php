@@ -6,7 +6,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\PembayaranController;
 use App\Http\Controllers\PengirimanController;
 use App\Http\Controllers\PelangganController;
-use App\Http\Controllers\OrderController; // Modul Pemesanan
+use App\Http\Controllers\PesananController; // Modul Pemesanan
 
 Route::get('/user', function (Request $request) {
     return $request->user();
@@ -30,4 +30,4 @@ Route::get('/pengiriman', [PengirimanController::class, 'index']);
 Route::get('/pelanggan', [PelangganController::class, 'index']);
 
 // Modul Pemesanan / Orders
-Route::apiResource('orders', OrderController::class);
+Route::apiResource('orders', PesananController::class);
