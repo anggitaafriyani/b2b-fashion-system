@@ -18,7 +18,12 @@ Route::get('/tes-api', function () {
 });
 
 // Modul Produk (Rine)
-Route::get('/products', [ProductController::class, 'index']);
+Route::get('/products/view', [ProductController::class, 'index']);
+Route::get('/products', [ProductController::class, 'apiIndex']);
+Route::post('/products', [ProductController::class, 'apiStore']);
+Route::get('/products/{id}', [ProductController::class, 'apiShow']);
+Route::put('/products/{id}', [ProductController::class, 'apiUpdate']);
+Route::delete('/products/{id}', [ProductController::class, 'apiDestroy']);
 
 // Modul Pembayaran (Miche)
 Route::get('/pembayaran', [PembayaranController::class, 'index']);
@@ -31,3 +36,4 @@ Route::get('/pelanggan', [PelangganController::class, 'index']);
 
 // Modul Pemesanan / Orders
 Route::apiResource('orders', PesananController::class);
+
