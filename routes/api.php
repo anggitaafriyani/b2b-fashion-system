@@ -51,4 +51,9 @@ Route::get('/pengiriman', [PengirimanController::class, 'index']);
 // ==========================================
 // 5. Modul Pemesanan (Risti)
 // ==========================================
-Route::apiResource('orders', PesananController::class);
+Route::get('/pesanan/view', [PesananController::class, 'index']);
+Route::get('/pesanan', [PesananController::class, 'apiIndex']);
+Route::post('/pesanan', [PesananController::class, 'apiStore']);
+Route::get('/pesanan/{id}', [PesananController::class, 'apiShow']);
+Route::put('/pesanan/{id}', [PesananController::class, 'apiUpdate']);
+Route::delete('/pesanan/{id}', [PesananController::class, 'apiDestroy']);
