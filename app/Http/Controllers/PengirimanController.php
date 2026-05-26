@@ -10,7 +10,7 @@ class PengirimanController extends Controller
     // Render Halaman Utama Blade
     public function index()
     {
-        return view('pengiriman.pengiriman');
+        return view('pengiriman');
     }
 
     // API: Ambil Semua Data Pengiriman
