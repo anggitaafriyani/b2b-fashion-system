@@ -41,7 +41,11 @@ Route::delete('/pelanggan/{id}', [PelangganController::class, 'apiDestroy']);
 // ==========================================
 // 3. Modul Pembayaran (Miche)
 // ==========================================
-Route::get('/pembayaran', [PembayaranController::class, 'index']);
+Route::get('/pembayaran/view', [PembayaranController::class, 'index']); 
+Route::get('/pembayaran', [PembayaranController::class, 'apiIndex']);
+Route::post('/pembayaran', [PembayaranController::class, 'apiStore']);
+Route::put('/pembayaran/{id}', [PembayaranController::class, 'apiUpdate']);
+Route::delete('/pembayaran/{id}', [PembayaranController::class, 'apiDestroy']);
 
 // ==========================================
 // 4. Modul Pengiriman (Hedy)
