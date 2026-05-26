@@ -50,7 +50,10 @@ Route::delete('/pembayaran/{id}', [PembayaranController::class, 'apiDestroy']);
 // ==========================================
 // 4. Modul Pengiriman (Hedy)
 // ==========================================
-Route::get('/pengiriman', [PengirimanController::class, 'index']);
+Route::get('/pengiriman', [PengirimanController::class, 'apiIndex']);
+Route::post('/pengiriman', [PengirimanController::class, 'apiStore']);
+Route::put('/pengiriman/{id}', [PengirimanController::class, 'apiUpdate']);
+Route::delete('/pengiriman/{id}', [PengirimanController::class, 'apiDestroy']);
 
 // ==========================================
 // 5. Modul Pemesanan (Risti)
